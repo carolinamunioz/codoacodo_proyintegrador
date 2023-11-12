@@ -2,13 +2,15 @@
 
 const express = require ('express');
 const app = express();
-
-/*app.get('/home', (req, res) => {
-    //logica para ir a la BD y traer la info para llenar la pagina
-    res.sendFile(__dirname + '/public_html/index.html')
-});*/
+const mainRoutes = require('./src/routes/mainRoutes');
+const shopRoutes = require('./src/routes/shopRoutes');
+const adminRoutes = require('./src/routes/adminRoutes');
+const authRoutes = require('./src/routes/authRoutes');
 
 app.use(express.static('public'));
+app.use('/',mainRoutes);
+app.use('/shop',shopRoutes);
+app.use('/auth',authRoutes);
 
 //app.get('/ping', (req, res) => res.send('pong'));
 
