@@ -11,6 +11,7 @@ app.use(express.static('public'));
 app.use('/',mainRoutes);
 app.use('/shop',shopRoutes);
 app.use('/auth',authRoutes);
+app.use('/admin',adminRoutes);
 
 //app.get('/ping', (req, res) => res.send('pong'));
 
