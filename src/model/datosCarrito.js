@@ -1,5 +1,3 @@
-//const datosCarrito = require ('../model/datosCarrito');
-
 const datosCarrito = [
     {
         product_id: 1,
@@ -28,15 +26,3 @@ const datosCarrito = [
         img_back: "../../img/pokemon/pidgeotto-box.webp"
     }
 ];
-
-//console.log(datosCarrito);
-
-const shopControllers = {
-    home: (req, res) => res.send('Route for Shop View '),
-    getItemId: (req, res) => res.send(`Route to find and retrieve a product from the id: ${req.params.id}`),
-    addItemId: (req, res) => res.send('Route to add the current item to the shop cart'),
-    cart: (req, res) => res.render('./shop/cart', {data:datosCarrito}),
-    addCart: (req, res) => res.send('Route for Go to Checkout page ')
-}
-
-module.exports = shopControllers;

@@ -13,6 +13,8 @@ app.use('/shop',shopRoutes);
 app.use('/auth',authRoutes);
 app.use('/admin',adminRoutes);
 
-//app.get('/ping', (req, res) => res.send('pong'));
+/* Motor de Plantillas EJS */
+app.set('view engine', 'ejs');
+app.set('views', './src/views');
 
-app.listen(4000, () => console.log("Servidor running on http://localhost:4000"));
+app.listen(4000, () => console.log("Server running on http://localhost:4000"));
