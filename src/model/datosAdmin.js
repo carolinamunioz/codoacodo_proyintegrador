@@ -79,13 +79,3 @@ const datosAdmin = [
     }
 ]
 
-const adminControllers = {
-    home: (req, res) => res.render('./admin/admin', {data:datosAdmin}),
-    createItem:(req, res) => res.render('./admin/createItem'),
-    saveItem: (req, res) => res.send('Route to save Admin View'),
-    itemById: (req, res) => res.render('./admin/updateItem'),
-    saveItemById: (req, res) => res.send(`Route to save the specific item with id ${req.params.id} on the Admin view`),
-    deleteItem:  (req, res) => res.send(`Route to delete the specific item with id ${req.params.id} on the Admin view`)
-}
-
-module.exports = adminControllers;

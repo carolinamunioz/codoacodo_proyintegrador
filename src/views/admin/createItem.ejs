@@ -9,29 +9,11 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar container">
-            <picture class="navbar__logo">
-                <img src="../../img/branding/logo_light_horizontal.svg" alt="Isotipo de la marca Funkoshop">
-            </picture>
-            <ul class="navbar__menu">
-                <li class="navbar__item with-submenu">
-                    <a class="navbar__link with-icon" href="../shop/shop.html">VER TIENDA</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="./admin.html">ADMIN</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link" href="./login.html">SALIR</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
+    <%- include('../partials/headerAdmin') %>
     <body>
         <section class="item container">
             <h1 class="item__titulo">CREAR NUEVO ITEM</h1>
-            <form action="">
+            <form action="/admin/create" method="post">
                 <div class="item__linea">
                     <label for="categoria" class="item__label">Categoria:</label>
                     <select name="categoria" id="categoria" aria-placeholder="Seleccionar">
@@ -83,29 +65,7 @@
             </form>
         </section>
     </body>
-
-    <footer>
-        <nav class="navbar__main container">
-            <ul class="navbar__footer">
-                <li class="navbar__item">
-                    <a class="navbar__link_footer" href="../shop/shop.html">SHOP</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link_footer" href="./register.html">REGISTRARSE</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link_footer" href="./login.html">INGRESAR</a>
-                </li>
-                <li class="navbar__item">
-                    <a class="navbar__link_footer" href="./contacto.html">CONTACTO</a>
-                </li>
-            </ul>
-            <picture class="navbar_logo">
-                <img src="../../img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop">
-            </picture>
-        </nav>
-        <p class="rights container">All rights reserved 2022 - Funkoshop &copy;</p>
-    </footer>
+    <%- include('../partials/footerAdmin') %>
 </body>
 
 </html>
