@@ -79,6 +79,8 @@ const datosAdmin = [
     }
 ]
 
+//import datosAdmin from "../model/datosAdmin"
+
 const adminControllers = {
     home: (req, res) => res.render('./admin/admin', {data:datosAdmin}),
     createItem:(req, res) => res.render('./admin/createItem'),

@@ -29,8 +29,6 @@ const datosCarrito = [
     }
 ];
 
-//console.log(datosCarrito);
-
 const shopControllers = {
     home: (req, res) => res.send('Route for Shop View '),
     getItemId: (req, res) => res.send(`Route to find and retrieve a product from the id: ${req.params.id}`),
