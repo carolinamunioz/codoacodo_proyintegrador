@@ -1,4 +1,4 @@
-const datosCarrito = [
+datosCarrito = [
     {
         product_id: 1,
         licence_name: "STAR WARS",
