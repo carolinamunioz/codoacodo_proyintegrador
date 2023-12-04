@@ -187,7 +187,6 @@ header{
     width: 18px;
     background-color: var(--dark-700);
     border: none;
-    color: var(--light-font-solid);
     text-align: center;
 }
 
@@ -195,6 +194,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--light-font-solid);
 }
 
 
@@ -237,6 +237,7 @@ header{
     font-size: var(--font-jumbo);
 }
 
+
 .item__button{
     font-family: var(--base-font);
     font-size: var(--font-medium);
@@ -277,9 +278,18 @@ header{
     text-transform: uppercase;
 }
 
-.slider__items{
-    display: flex;
-    gap: var(--spacing-68);
+iconify-icon{
+    color: var(--dark-solid);
+    font-size: var(--font-small);
+    font-weight: 700;
+}
+
+.glide__arrow--left{
+    left: 0!important;
+}
+
+.glide__arrow--right{
+    right: 0!important;
 }
 
 .card-item__tag{
