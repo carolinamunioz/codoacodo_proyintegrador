@@ -421,13 +421,14 @@ header{
   text-align: left;
 }
 
-.formulario input {
+/*.formulario input {
   border-style: none;
   border-bottom: var(--primary-solid) 2px solid;  
-}
-.email  {
+}*/
+
+/*.email  {
   margin-left:50px;
-}
+}*/
 
 .formulario__ingresar{
   display: flex;
@@ -474,7 +475,8 @@ header{
 }
 
 .formulario__input  {
-  width:200; 
+  border-style: none;
+  width: 200; 
   height: 24; 
   border-bottom: var(--primary-solid) 2px solid;
 }
@@ -830,11 +832,6 @@ footer {
   line-height: 29px;
   letter-spacing: 0.04em;
   text-align: left;
-}
-
-.formulario input {
-  border-style: none;
-  border-bottom: 2px solid #FF3333;
 }
 
 .formulario__tyc{
