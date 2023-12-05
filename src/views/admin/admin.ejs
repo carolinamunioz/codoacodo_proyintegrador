@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/style.css">
-    <title>Admin | Tienda Funkoshop</title>
+    <title>Admin | Funkoshop</title>
 </head>
 
 <body>
@@ -57,12 +57,12 @@
                                 <p class="listado__celda"><%= producto.licence_name %></p>
                             </td>
                             <td>
-                                <a class="navbar__cart" href="/admin/edit/id">
+                                <a class="navbar__cart" href="/admin/edit/<%= producto.product_id %>">
                                     <iconify-icon  class="listado__iconEdit" icon="ic:baseline-edit"></iconify-icon>
                                 </a>
                             </td>
                             <td>
-                                <a class="navbar__cart" href="/admin/edit/id"> <!-- TIENE QUE ELIMINAR, VER SI AGREGAMOS UN ALERT-->
+                                <a class="navbar__cart" href="/admin/edit/<%= producto.product_id %>"> <!-- TIENE QUE ELIMINAR, VER SI AGREGAMOS UN ALERT-->
                                     <iconify-icon  class="listado__iconDelete" icon="material-symbols-light:delete"></iconify-icon>
                                 </a>
                             </td>
