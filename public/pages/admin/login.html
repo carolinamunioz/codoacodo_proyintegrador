@@ -34,30 +34,17 @@
             <h1 class="login__titulo">INGRESAR A MI CUENTA</h1>
             <!-- Que campos ademas de la password deberian ser obligatorios???-->
             <div class="form_container">
-                <form class="formulario" action="https://formspree.io/f/xqkvqprw" method="post">
+                <form class="formulario" action="" method="post">
                     <!-- <div class="formulario_linea"> -->
                     <div class="formulario_linea">
                         <label for="email" class="formulario__label">Email:</label>
-                        <input class="email"name="email" id="email" type="email"
+                        <input class="formulario__input" name="email" id="email" type="email"
                             pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
                             title="Debe ser un formato correcto de email" placeholder="johndoe@correo.com">
                     </div>
                     <div class="formulario_linea">
                         <label for="password" class="formulario__label">Contraseña:</label>
-                        <svg class="formulario__input" viewBox="0 0 209 24" fill="none" >
-                            <g style="mix-blend-mode:darken">
-                            <circle cx="10.8713" cy="6.28345" r="6.03638" fill="#E0E0E0"/>
-                            <circle cx="30.9507" cy="6.28345" r="6.03638" fill="#E0E0E0"/>
-                            <circle cx="51.03" cy="6.28345" r="6.03638" fill="#E0E0E0"/>
-                            <line x1="0.265625" y1="22.7842" x2="208.866" y2="22.7842" />
-                            <circle cx="71.1094" cy="6.28345" r="6.03638" fill="#E0E0E0"/>
-                            <circle cx="91.1887" cy="6.28345" r="6.03638" fill="#E0E0E0"/>
-                            <circle cx="111.268" cy="6.28345" r="6.03638" fill="#E0E0E0"/>
-                            <circle cx="131.347" cy="6.28345" r="6.03638" fill="#E0E0E0"/>
-                            <circle cx="151.427" cy="6.28345" r="6.03638" fill="#E0E0E0"/>
-                            <circle cx="171.507" cy="6.28345" r="6.03638" fill="#E0E0E0"/>
-                            </g>
-                            </svg>
+                        <input class="formulario__input" type="password" id="password" name="password" placeholder="***********" required>
                     </div>
                     <div class="formulario__ingresar">
                         <button class="ingresar" type="submit">Ingresar</button>
