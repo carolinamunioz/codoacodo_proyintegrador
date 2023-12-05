@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/styleShop.css">
+    <title>Shop | Funkoshop </title>
+</head>
+<body>
+    <!-- Navbar -->
+    <%- include('../partials/header') %> 
+    <!--Cierre Navbar -->
+    <main>
+        <section class="form container"> <!--Filtrado-->
+                <form class="Form-1">
+                    <div class="Form__buscar">
+                        <label class="Buscar">BUSCAR</label>
+                        <div class="Form__placeholder_buscar">
+                            <input type="text" class="Form__input_buscar" placeholder="   item o categoria"></input>
+                        </div>
+                    </div>
+                    <div class="Form-2">
+                        <label class="Form__precio">PRECIO</label>
+                        <div class="form__min-max">
+                            <label class="Min">MIN</label>
+                            <label class="Max">MAX</label>
+                            <label class="signo-">-</label>
+                            <input type="number" class="form__placeholder-min" placeholder="   0"></input>
+                            <input type="number" class="form__placeholder-max" placeholder="   0"></input>
+                        </div>
+                    </div>
+                    <div class="Form-3">
+                        <label class="Form__OrdenarPor">ORDENAR POR</label>
+                        <div class="Form__Vector">
+                            <div class="MaterialSymbolsArrowDropDownRounded">
+                                <a class="Vector"></a>
+                            </div>
+                            <input type="text" class="Form__placeholder-vector" placeholder="   Mayor a Menor"><img class="Vector"src="/Img/icons/material-symbols_arrow-drop-down-rounded.jpg" alt=""></input>
+                        </div>
+                    </div>
+                    <div class="Form-4">
+                        <label class="Form__Filtrar">FILTRAR</label>
+                        <div class="Form__Filtrar-gral">
+                            <div class="Form__Filtrar-nuevos">
+                                <label class="Nuevos">NUEVOS</label>
+                                <input class="Form__nuevos"></input>
+                            </div>
+                            <div class="Form__ofertas">
+                                <label class="Ofertas">OFERTAS</label>
+                                <input class="Form__ofertas-input"></input>
+                            </div>
+                            <div class="Form__EdiciNEspecial">
+                                <label class="EdiciNEspecial">EDICIÓN ESPECIAL</label>
+                                <input class="Form__EdiciNEspecial-input"></input>
+                            </div>
+                            <div class="Form__Fav">
+                                <label class="Favoritos">FAVORITOS</label>
+                                <input class="Form__Fav-input"></input>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+        </section><!--Cierre Filtrado-->
+        <section class="slider"> <!--inicio cuerpo gral-->
+            <ul class="slider__items">
+              <% data.forEach(producto => { %>
+                <li class="slider__item">
+                  <article class="card-item">
+                    <a class="card-item__link" href="#">
+                      <picture class="card-item__cover">
+                        <img class="item_imagen" src="<%= producto.img_front %>" id="imagen_item" alt="<%= producto.product_description %>">
+                        <img class="item_imagen" src="<%= producto.img_back %>" id="imagen_item" alt="<%= producto.product_description %>">
+                      </picture>
+                      <div class="card-item__content">
+                        <p class="card-item__licence"><%= producto.product_name %></p>
+                        <h4 class="card-item__name"><%= producto.licence_name %></h4>
+                        <p class="card-item__price">$<%= producto.product_price %></p>
+                        <p class="card-item__promo"><%= producto.product_promo %></p>
+                      </div>
+                    </a>
+                  </article>
+                </li>
+              <% }); %>
+            </ul>
+          </section>
+         <!--Cierre cuerpo gral-->
+        <section class="numero"><!--paginas-->
+            <div class="Pagination">
+                    <div class="PageMaster">
+                        <div class="IcCaratRight">
+                            <div class="IcCaratLeft">
+                                <a class="IcCarat-Left">
+                                    <a class="glide__arrow glide__arrow--left icon__slider" data-glide-dir="<"><iconify-icon icon="tabler:chevron-left"></iconify-icon></a>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="PageDefault">
+                        <div class="Page-Default">
+                            <div class="Num Page-Default">1</div>
+                        </div>
+                    </div>
+                    <div class="PageDefault">
+                        <div class="Page-Default">
+                            <div class="Num-gral Page-Default">2</div>
+                        </div>
+                    </div>
+                    <div class="PageDefault">
+                        <div class="Page-Defaulte">
+                            <div class="Num-gral Page-Defaulte">...</div>
+                        </div>
+                    </div>
+                    <div class="PageDefault">
+                        <div class="Page-Default">
+                            <div class="Num-gral Page-Default">9</div>
+                        </div>
+                    </div>
+                    <div class="PageDefault">
+                        <div class="Page-Default">
+                            <div class="Num-gral Page-Default" >10</div>
+                        </div>
+                    </div>
+                    <div class="PageMaster PageDisabled">
+                        <div class="IcCaratRight">
+                            <div class="IcCaratLeft">
+                                <a class="IcCarat-Left">
+                                    <a class="glide__arrow glide__arrow--right icon__slider" data-glide-dir=">"><iconify-icon icon="tabler:chevron-right"></iconify-icon></a>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <% }); %>
+    </main>
+    <!-- footer -->
+    <%- include('../partials/footer') %> 
+    <!--Cierre footer-->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+</body>
+</html>
