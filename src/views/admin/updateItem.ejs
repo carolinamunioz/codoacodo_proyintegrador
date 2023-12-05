@@ -13,15 +13,15 @@
     <body>
         <section class="item container">
             <h1 class="item__titulo">EDITAR ITEM</h1>
-            <form action="/admin/create/id" method="post">
+            <form action="/admin/create/<%= producto.product_id %>" method="post">
                 <div class="item__linea">
                     <label for="categoria" class="item__label">Categoria:</label>
-                    <select name="categoria" id="categoria" aria-placeholder="Seleccionar">
+                    <select name="categoria" id="categoria" value="<%= producto.category_name %>">
+                        <option value="figuras" selected>Figuras coleccionables</option>
                         <option value="seleccionar">Seleccionar</option>
-                        <option value="figuras">Figuras coleccionables</option>
                     </select>
                     <label for="licencia" class="item__label">Licencia:</label>
-                    <select name="licencia" id="licencia">
+                    <select name="licencia" id="licencia" value="<%= producto.licence_name %>">
                         <option value="seleccionar">Seleccionar</option>
                         <option value="star_wars">Star Wars</option>
                         <option value="pokemon">Pokemon</option>
@@ -30,24 +30,24 @@
                 </div>
                 <div class="item__linea">
                     <label for="producto" class="formulario__label">Nombre del Producto:</label>
-                    <input class="item__input" name="producto" id="producto" type="text" placeholder="Kakashi Hatake Shippuden Saga"> 
+                    <input class="item__input" name="producto" id="producto" type="text" value="<%= producto.product_name %>"> 
                 </div>
                 <div class="item__linea">
-                    <textarea class="item__description" name="descripcion" id="descripcion" placeholder="Descripción del Producto"></textarea>
+                    <textarea class="item__description" name="descripcion" id="descripcion" value="<%= producto.product_description %>"></textarea>
                 </div>
                 <div class="item__linea">
                     <label for="sku" class="item__label">SKU:</label>
-                    <input class="item__input" name="sku" id="sku" type="text" placeholder="SSK111AB001">
+                    <input class="item__input" name="sku" id="sku" type="text" value="<%= producto.product_sku %>">
                     <label for="precio" class="item__label">Precio:</label>
-                    <input  class="item__input" name="precio" id="precio" type="text" placeholder="$ 0.000,00">
+                    <input  class="item__input" name="precio" id="precio" type="text" value="<%= producto.product_price %>">
                     <label for="stock" class="item__label">Stock:</label>
-                    <input class="item__input" name="stock" id="stock" type="text" placeholder="0">
+                    <input class="item__input" name="stock" id="stock" type="text" value="<%= producto.dues %>">
                 </div>
                 <div class="item__linea">
                     <label for="descuento" class="item__label">Descuento:</label>
                     <input class="item__input" name="descuento" id="descuento" type="text" placeholder="0%">
                     <label for="cuotas" class="item__label">Cuotas:</label>
-                    <select name="cuotas" id="cuotas" aria-placeholder="Seleccionar">
+                    <select name="cuotas" id="cuotas">
                         <option value="tres">3 Cuotas sin interés</option>
                         <option value="seis">6 Cuotas sin interés</option>
                         <option value="doce">12 Cuotas sin interés</option>
@@ -58,9 +58,18 @@
                     <button class="" type="submit">Elegir archivos</button>
                     <p class="item__leyenda">No se ha seleccionado ningún archivo</p>
                 </div>
+                <div class="item__imagenes">
+                    <picture class="imagen" >
+                        <img src="<%= producto.img_front %>" alt="Imagen del producto - Frente">
+                        <label for="frente">FRENTE</label>
+                    </picture>
+                    <picture class="imagen" >
+                        <img src="<%= producto.img_back %>" alt="Imagen del producto - Dorso">
+                        <label for="dorso">DORSO</label>
+                    </picture>
+                </div>
                 <div class="item__botones">
-                    <button class="item__boton" type="submit">Agregar Producto</button>
-                    <button class="item__boton" type="reset">Limpiar</button>
+                    <button class="item__boton" type="submit">Modificar Producto</button>
                 </div>
             </form>
         </section>
