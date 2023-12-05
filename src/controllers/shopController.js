@@ -26,6 +26,20 @@ const datosCarrito = [
         product_sku: "PKM001001",
         img_front: "../../img/pokemon/pidgeotto-1.webp",
         img_back: "../../img/pokemon/pidgeotto-box.webp"
+    },
+    {
+        product_id: 6,
+        licence_name: "HARRY POTTER",
+        category_name: "Figuras coleccionables",
+        product_name: "LUNA LOVEWOOD",
+        product_description: "Figura coleccionable Harry Potter",
+        product_price: 1799.99,
+        dues: 8,
+        units_in_cart:1,
+        product_sku: "PKM001001",
+        img_front: "../../img/harry-potter/luna-1.webp",
+        img_back: "../../img/harry-potter/luna-box.webp",
+        product_promo: "3 CUOTAS SIN INTERÉS"
     }
 ];
 
