@@ -8,8 +8,8 @@ const datosAdmin = [
         dues: 5,
         product_sku: "STW001001",
         category_name: 'Figuras coleccionables',
-        img_front: '../../img/pokemon/pidgeotto-1.webp',
-        img_back: '../../img/pokemon/pidgeotto-box.webp'
+        img_front: '../../img/pokemon/baby-yoda-1.webp',
+        img_back: '../../img/pokemon/baby-yoda-box.webp'
     },
     {
         product_id: 2,
