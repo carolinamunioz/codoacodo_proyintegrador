@@ -60,12 +60,16 @@
                 </div>
                 <div class="item__botones">
                     <button class="item__boton" type="submit">Agregar Producto</button>
-                    <button class="item__boton" type="reset">Limpiar</button>
+                    <button class="item__boton" type="reset" onclick="limpiarForm()">Limpiar</button>
                 </div>
             </form>
         </section>
     </body>
     <%- include('../partials/footerAdmin') %>
 </body>
-
+<script>
+    function limpiarForm() {
+        document.querySelector("form").reset();
+    }
+</script>
 </html>

@@ -1,12 +1,12 @@
 import { Router } from 'express';
 const router = Router();
-import { getAllProducts, createItem, saveNewProduct, getProductById } from '../controllers/adminController.js';
+import { getAllProducts, createItem, saveNewProduct, getProductById, updateProduct, deleteProduct} from '../controllers/adminController.js';
 
 router.get('/', getAllProducts);
 router.get('/create', createItem);
 router.post('/create', saveNewProduct); 
 router.get('/edit/:id', getProductById);
-/*router.put('/edit/:id', adminControllers.saveItemById);
-router.delete('/edit/:id', adminControllers.deleteItem);*/
+router.post('/edit/:id', updateProduct);
+router.get('/delete/:id', deleteProduct);
 
 export default router;

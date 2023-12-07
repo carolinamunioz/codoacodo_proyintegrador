@@ -58,11 +58,11 @@
                             </td>
                             <td>
                                 <a class="navbar__cart" href="/admin/edit/<%= producto.product_id %>">
-                                    <iconify-icon  class="listado__iconEdit" icon="ic:baseline-edit"></iconify-icon>
+                                    <iconify-icon  class="listado__iconEdit" icon="ic:baseline-edit" onclick="confirmDelete()"></iconify-icon>
                                 </a>
                             </td>
                             <td>
-                                <a class="navbar__cart" href="/admin/edit/<%= producto.product_id %>"> <!-- TIENE QUE ELIMINAR, VER SI AGREGAMOS UN ALERT-->
+                                <a class="navbar__cart" href="/admin/delete/<%= producto.product_id %>">
                                     <iconify-icon  class="listado__iconDelete" icon="material-symbols-light:delete"></iconify-icon>
                                 </a>
                             </td>
@@ -75,5 +75,4 @@
     <%- include('../partials/footerAdmin') %>
 </body>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-<script src="../Js/admin.js"></script>
 </html>
