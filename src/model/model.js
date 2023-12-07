@@ -28,7 +28,9 @@ export const getProductByIdFromDB = async (id) => {
 export const addNewProductToDB = async (prodData) => {
     try {
         const [result] = await pool.query('INSERT INTO products SET ?', [prodData]);
+        console.log([result]);
         const nuevoProdID = result.insertId;
+        console.log(nuevoProdID);
         const nuevoProd = await getProductByIdFromDB(nuevoProdID);
         return nuevoProd;
     } catch (error) {
@@ -40,7 +42,7 @@ export const addNewProductToDB = async (prodData) => {
 //Actualizar un producto existente en la base de datos con nuevos datos
 export const editProductInDB = async (id, newProdData) => {
     try {
-        await pool.query('UPDATE products SET ? WHERE id = ?', [newProdData, id]);
+        await pool.query('UPDATE products SET ? WHERE product_id = ?', [newProdData, id]);
         const updatedProd = await getProductByIdFromDB(id);
         return updatedProd;
     } catch (error) {

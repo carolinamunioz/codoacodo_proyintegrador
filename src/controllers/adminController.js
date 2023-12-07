@@ -1,4 +1,4 @@
-import { addNewProductToDB, getAllProductsFromDB, getProductByIdFromDB } from '../model/model.js';
+import { addNewProductToDB, getAllProductsFromDB, getProductByIdFromDB, editProductInDB, deleteProdFromDB } from '../model/model.js';
 
 // Obtiene todos los productos de la BD y renderiza la pag Admin
 export const getAllProducts = async (req, res) => {
@@ -38,15 +38,38 @@ export const getProductById = async (req, res) => {
             producto: prod[0]
         })
     } catch (error) {
-        console.error("Error getting all products: ", error);
+        console.error("Error getting product: ", error);
         res.status(500).send('Internal Server Error');
     }
 }
 
-
-/*
-export const adminControllers = {
-    saveItemById: (req, res) => res.send(`Route to save the specific item with id ${req.params.id} on the Admin view`),
-    deleteItem:  (req, res) => res.send(`Route to delete the specific item with id ${req.params.id} on the Admin view`)
+//Guarda los cambios en la BD de un producto existente
+export const updateProduct = async (req, res) => {
+    const newProdData = req.body;
+    const prod_id = parseInt(req.params.id);
+    try {
+        const nuevoProd = await editProductInDB(prod_id,newProdData);
+        const datos = await getAllProductsFromDB();
+        res.render('./admin/admin', {data:datos});
+    } catch (error) {
+        console.error("Error saving changes to product: ", error);
+        res.status(500).send('Internal Server Error');
+    }
 }
-*/
+
+//Eliminar un producto de la BD
+export const deleteProduct = async (req, res) => {
+    const prod_id = parseInt(req.params.id);
+    try {
+        const deleteProd = await deleteProdFromDB(prod_id);
+        if (deleteProd) {
+            const datos = await getAllProductsFromDB();
+            res.render('./admin/admin', {data:datos});
+        } else {
+            res.status(404).send('usuario not found');
+        }
+    } catch (error) {
+        console.error("Error deleting product: ", error);
+        res.status(500).send('Internal Server Error');
+    }
+}
