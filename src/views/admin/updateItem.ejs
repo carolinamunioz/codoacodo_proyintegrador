@@ -17,15 +17,15 @@
                 <div class="item__linea">
                     <label for="categoria" class="item__label">Categoria:</label>
                     <select name="category_name" id="categoria" value="<%= producto.category_name %>">
-                        <option value="seleccionar">Seleccionar</option>
+                        <option value="<%= producto.category_name %>" selected><%= producto.category_name %></option>
                         <option value="Figuras coleccionables">Figuras coleccionables</option>
                     </select>
                     <label for="licencia" class="item__label">Licencia:</label>
                     <select name="licence_name" id="licencia" value="<%= producto.licence_name %>">
-                        <option value="seleccionar">Seleccionar</option>
-                        <option value="STAR WARS">Star Wars</option>
-                        <option value="POKEMON">Pokemon</option>
-                        <option value="HARRY POTTER">Harry Potter</option>
+                        <option value="<%= producto.licence_name %>" selected><%= producto.licence_name %></option>
+                        <option value="STAR WARS">STAR WARS</option>
+                        <option value="POKEMON">POKEMON</option>
+                        <option value="HARRY POTTER">HARRY POTTER</option>
                     </select>
                 </div>
                 <div class="item__linea">
@@ -48,6 +48,7 @@
                     <input class="item__input" name="product_discount" id="descuento" type="text" placeholder="0%" value="<%= producto.product_discount %>">
                     <label for="cuotas" class="item__label">Cuotas:</label>
                     <select name="product_cuotas" id="cuotas" value="<%= producto.product_cuotas %>">
+                        <option value="<%= producto.product_cuotas %>" selected><%= producto.product_cuotas %></option>
                         <option value="tres">3 Cuotas sin interés</option>
                         <option value="seis">6 Cuotas sin interés</option>
                         <option value="doce">12 Cuotas sin interés</option>
