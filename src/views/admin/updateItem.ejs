@@ -45,9 +45,9 @@
                 </div>
                 <div class="item__linea">
                     <label for="descuento" class="item__label">Descuento:</label>
-                    <input class="item__input" name="descuento" id="descuento" type="text" placeholder="0%">
+                    <input class="item__input" name="descuento" id="descuento" type="text" placeholder="0%" value="<%= producto.product_discount %>">
                     <label for="cuotas" class="item__label">Cuotas:</label>
-                    <select name="cuotas" id="cuotas">
+                    <select name="cuotas" id="cuotas" value="<%= producto.product_cuotas %>">
                         <option value="tres">3 Cuotas sin interés</option>
                         <option value="seis">6 Cuotas sin interés</option>
                         <option value="doce">12 Cuotas sin interés</option>
