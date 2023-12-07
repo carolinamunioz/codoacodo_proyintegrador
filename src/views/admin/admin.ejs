@@ -62,8 +62,8 @@
                                 </a>
                             </td>
                             <td>
-                                <a class="navbar__cart" href="/admin/delete/<%= producto.product_id %>">
-                                    <iconify-icon  class="listado__iconDelete" icon="material-symbols-light:delete"></iconify-icon>
+                                <a class="navbar__cart" href="#" onclick="confirmDeletion('<%= producto.product_id %>')">
+                                    <iconify-icon class="listado__iconDelete" icon="material-symbols-light:delete"></iconify-icon>
                                 </a>
                             </td>
                         </tr>   
@@ -75,4 +75,5 @@
     <%- include('../partials/footerAdmin') %>
 </body>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script src="../../js/admin.js"></script>  
 </html>
