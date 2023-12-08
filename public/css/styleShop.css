@@ -538,6 +538,25 @@ border: 2px #30343F solid
   margin-left:388px; /*mover espacio entre storm y filtrado*/
 }
 
+.cartel{
+  background-color: var(--primary-solid);
+  position: absolute;
+  top: 0; /* Ajusta la posición desde la parte superior */
+  right: 0; /* Ajusta la posición desde la parte derecha */
+  padding: 5px; /* Ajusta según el diseño */
+  width: 80px;
+  height: 30px;
+  z-index: 1;
+}
+.nuevo{
+  color: var(--light-bg-solid);
+  margin: 0; /* Ajusta según el diseño */
+  font-weight: var(--font-small); /* Ajusta según el diseño */
+  font-size: var(--font-small);
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
 .slider__title  {
   font-family: var(--alternative-font);
   font-size: var(--font-display);
@@ -562,6 +581,7 @@ border: 2px #30343F solid
 }
 
 .slider__item{
+  position: relative;
   width: 100%;
   width: calc(33.33% - 20px); /* Ancho de cada elemento, 20px de espacio entre elementos */
   margin-bottom: 20px; /* Espacio entre filas */
@@ -581,6 +601,7 @@ border: 2px #30343F solid
 .card-item__cover {
   display: flex;
   position: relative;
+  z-index: 0;
 }
 
 .card-item__cover img{
