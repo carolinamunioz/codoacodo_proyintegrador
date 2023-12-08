@@ -11,7 +11,7 @@ export const getAllProducts = async (req, res) => {
     }
 }
 
-// Renderiza la pagina que usamos para agregar un nuevo producto
+// Renderiza la pagina que usamos para crear un nuevo producto
 export const createItem = (req, res) => {
     res.render('./admin/createItem');
 }
