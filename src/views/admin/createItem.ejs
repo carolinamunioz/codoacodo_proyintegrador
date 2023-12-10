@@ -16,12 +16,12 @@
             <form action="/admin/create/" method="post">
                 <div class="item__linea">
                     <label for="categoria" class="item__label">Categoria:</label>
-                    <select name="category_name" id="categoria">
+                    <select name="category_id" id="categoria">
                         <option value="Seleccionar">Seleccionar</option>
                         <option value="Figuras Coleccionables">Figuras coleccionables</option>
                     </select>
                     <label for="licencia" class="item__label">Licencia:</label>
-                    <select name="licence_name" id="licencia">
+                    <select name="licence_id" id="licencia">
                         <option value="seleccionar">Seleccionar</option>
                         <option value="STAR WARS">Star Wars</option>
                         <option value="POKEMON">Pokemon</option>
@@ -37,15 +37,15 @@
                 </div>
                 <div class="item__linea">
                     <label for="sku" class="item__label">SKU:</label>
-                    <input class="item__input" name="product_sku" id="sku" type="text" placeholder="SSK111AB001" required>
+                    <input class="item__input" name="sku" id="sku" type="text" placeholder="SSK111AB001" required>
                     <label for="precio" class="item__label">Precio:</label>
-                    <input  class="item__input" name="product_price" id="precio" type="text" placeholder="$ 0.000,00" required>
+                    <input  class="item__input" name="price" id="precio" type="text" placeholder="$ 0.000,00" required>
                     <label for="stock" class="item__label">Stock:</label>
-                    <input class="item__input" name="dues" id="stock" type="text" placeholder="0" required>
+                    <input class="item__input" name="stock" id="stock" type="text" placeholder="0" required>
                 </div>
                 <div class="item__linea">
                     <label for="descuento" class="item__label">Descuento:</label>
-                    <input class="item__input" name="product_discount" id="descuento" type="text" placeholder="0%">
+                    <input class="item__input" name="discount" id="discount" type="text" placeholder="0%">
                     <label for="cuotas" class="item__label">Cuotas:</label>
                     <select name="product_cuotas" id="cuotas">
                         <option value="3 Cuotas sin interés">3 Cuotas sin interés</option>
