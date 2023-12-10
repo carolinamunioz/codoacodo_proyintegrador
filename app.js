@@ -17,10 +17,6 @@ app.use(express.urlencoded({extended: false}))
 app.set('view engine', 'ejs');
 app.set('views', './src/views');
 
-app.get('/', (req, res) => {
-    res.send('Hola mundo')
-})
-
 app.use(express.static('public'));
 app.use('/',mainRoutes);
 app.use('/shop',shopRoutes);
