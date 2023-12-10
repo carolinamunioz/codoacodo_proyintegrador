@@ -3,7 +3,7 @@ import pool from '../config/database.js';
 //Obtener todos los productos de la base de datos
 export const getAllProductsFromDB = async () => {
     try {
-        const [datos] = await pool.query('SELECT * FROM products')
+        const [datos] = await pool.query('SELECT * FROM products JOIN licence ON products.licence_id = licence.licence_id JOIN category ON products.category_id = category.category_id ORDER BY product_id')
         return datos
     }
     catch (error) {
@@ -15,7 +15,7 @@ export const getAllProductsFromDB = async () => {
 //Obtener un producto utilizando como filtro el product id
 export const getProductByIdFromDB = async (id) => {
     try {
-        const [datos] = await pool.query('SELECT * FROM products WHERE product_id = ?', [id])
+        const [datos] = await pool.query('SELECT * FROM products JOIN licence ON products.licence_id = licence.licence_id JOIN category ON products.category_id = category.category_id WHERE product_id = ?', [id])
         return datos
     }
     catch (error) {
@@ -27,10 +27,12 @@ export const getProductByIdFromDB = async (id) => {
 //Agregar un nuevo producto a la base de datos
 export const addNewProductToDB = async (prodData) => {
     try {
+        const [categoryId] = await pool.query('SELECT category_id FROM category WHERE category_name =?',prodData.category_id);
+        prodData.category_id = categoryId[0].category_id;
+        const [licenceId] = await pool.query('SELECT licence_id FROM licence WHERE licence_name =?',prodData.licence_id);
+        prodData.licence_id = licenceId[0].licence_id;
         const [result] = await pool.query('INSERT INTO products SET ?', [prodData]);
-        console.log([result]);
         const nuevoProdID = result.insertId;
-        console.log(nuevoProdID);
         const nuevoProd = await getProductByIdFromDB(nuevoProdID);
         return nuevoProd;
     } catch (error) {
@@ -42,6 +44,10 @@ export const addNewProductToDB = async (prodData) => {
 //Actualizar un producto existente en la base de datos con nuevos datos
 export const editProductInDB = async (id, newProdData) => {
     try {
+        const [categoryId] = await pool.query('SELECT category_id FROM category WHERE category_name =?',newProdData.category_id);
+        newProdData.category_id = categoryId[0].category_id;
+        const [licenceId] = await pool.query('SELECT licence_id FROM licence WHERE licence_name =?',newProdData.licence_id);
+        newProdData.licence_id = licenceId[0].licence_id;
         await pool.query('UPDATE products SET ? WHERE product_id = ?', [newProdData, id]);
         const updatedProd = await getProductByIdFromDB(id);
         return updatedProd;

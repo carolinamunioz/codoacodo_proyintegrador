@@ -16,12 +16,12 @@
             <form action="/admin/edit/<%= producto.product_id %>" method="post">
                 <div class="item__linea">
                     <label for="categoria" class="item__label">Categoria:</label>
-                    <select name="category_name" id="categoria" value="<%= producto.category_name %>">
+                    <select name="category_id" id="categoria">
                         <option value="<%= producto.category_name %>" selected><%= producto.category_name %></option>
                         <option value="Figuras coleccionables">Figuras coleccionables</option>
                     </select>
                     <label for="licencia" class="item__label">Licencia:</label>
-                    <select name="licence_name" id="licencia" value="<%= producto.licence_name %>">
+                    <select name="licence_id" id="licencia" value="<%= producto.licence_name %>">
                         <option value="<%= producto.licence_name %>" selected><%= producto.licence_name %></option>
                         <option value="STAR WARS">STAR WARS</option>
                         <option value="POKEMON">POKEMON</option>
@@ -37,21 +37,21 @@
                 </div>
                 <div class="item__linea">
                     <label for="sku" class="item__label">SKU:</label>
-                    <input class="item__input" name="product_sku" id="sku" type="text" value="<%= producto.product_sku %>">
+                    <input class="item__input" name="sku" id="sku" type="text" value="<%= producto.sku %>">
                     <label for="precio" class="item__label">Precio:</label>
-                    <input  class="item__input" name="product_price" id="precio" type="text" value="<%= producto.product_price %>">
+                    <input  class="item__input" name="price" id="precio" type="text" value="<%= producto.price %>">
                     <label for="stock" class="item__label">Stock:</label>
-                    <input class="item__input" name="dues" id="stock" type="text" value="<%= producto.dues %>">
+                    <input class="item__input" name="stock" id="stock" type="text" value="<%= producto.stock %>">
                 </div>
                 <div class="item__linea">
                     <label for="descuento" class="item__label">Descuento:</label>
-                    <input class="item__input" name="product_discount" id="descuento" type="text" placeholder="0%" value="<%= producto.product_discount %>">
+                    <input class="item__input" name="discount" id="descuento" type="text" placeholder="0%" value="<%= producto.discount %>">
                     <label for="cuotas" class="item__label">Cuotas:</label>
                     <select name="product_cuotas" id="cuotas" value="<%= producto.product_cuotas %>">
                         <option value="<%= producto.product_cuotas %>" selected><%= producto.product_cuotas %></option>
-                        <option value="tres">3 Cuotas sin interés</option>
-                        <option value="seis">6 Cuotas sin interés</option>
-                        <option value="doce">12 Cuotas sin interés</option>
+                        <option value="3 Cuotas sin interés">3 Cuotas sin interés</option>
+                        <option value="6 Cuotas sin interés">6 Cuotas sin interés</option>
+                        <option value="12 Cuotas sin interés">12 Cuotas sin interés</option>
                     </select>
                 </div>
                 <div class="item__linea">
