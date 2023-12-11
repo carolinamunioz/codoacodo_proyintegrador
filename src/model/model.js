@@ -73,7 +73,7 @@ export const deleteProdFromDB = async (prodId) => {
 export const getUserByUsernameFromDB = async (user) => {
     try {
         const [usuario] = await pool.query('SELECT * FROM user_login WHERE email = ?', user);
-        return usuario
+        return usuario[0]
     }
     catch (error) {
         console.error('Error querying MySQL: ', error);

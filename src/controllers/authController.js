@@ -13,17 +13,21 @@ export const loginPOST = async (req, res) => {
     const { email, password } = req.body
 
     const userData = await getUserByUsernameFromDB(email)
+    console.log(userData);
     
     // si obtuvo algo de la base de datos
-        if (userData && userData[0].password == password) {
+    if (userData) {
+        if (userData && userData.password == password) {
             req.session.esAdmin = true
-            req.session.usuario = userData[0].name
+            req.session.usuario = userData.name
             console.log("REQ SESSION ---> ",req.session)
             res.redirect("/admin")
-        } else {
-            res.render('./auth/login', {
-                mensaje: "Nombre de usuario o contraseña incorrecta",
-                error: true
-            });
         }
+    } 
+     else {
+        res.render('./auth/login', {
+            mensaje: "Nombre de usuario o contraseña incorrecta",
+            error: true
+        });
+    }
 }

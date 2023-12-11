@@ -41,10 +41,37 @@ const datosCarrito = [
     }
 ];
 
+import { getProductByIdFromDB, getAllProductsFromDB } from '../model/model.js'
+
 export const shopControllers = {
-    home: (req, res) => res.render('./shop/shop', {data:datosCarrito}),
-    getItemId: (req, res) => res.send(`Route to find and retrieve a product from the id: ${req.params.id}`),
+    homeShop: (req, res) => res.render('./shop/shop', {data:datosCarrito}),
     addItemId: (req, res) => res.send('Route to add the current item to the shop cart'),
     cart: (req, res) => res.render('./shop/cart', {data:datosCarrito}),
     addCart: (req, res) => res.send('Route for Go to Checkout page ')
+}
+
+export const getItemId = async (req,res) => {
+    try {
+        const prod_id = parseInt(req.params.id);
+        const prod = await getProductByIdFromDB(prod_id);
+        res.render('./shop/item', {
+            producto: prod[0]
+        })
+    } catch (error) {
+        console.error("Error getting product: ", error);
+        res.status(500).send('Internal Server Error');
+    }
+}
+
+
+export const homeShop = async (req,res) => {
+    try {
+        const datos = await getAllProductsFromDB();
+        res.render('./shop/shop', {
+            data:datos
+        });
+    } catch (error) {
+        console.error("Error getting all products: ", error);
+        res.status(500).send('Internal Server Error');
+    }
 }
