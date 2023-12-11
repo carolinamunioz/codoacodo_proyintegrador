@@ -5,8 +5,14 @@ import { addNewProductToDB, getAllProductsFromDB, getProductByIdFromDB, editProd
 // Obtiene todos los productos de la BD y renderiza la pag Admin
 export const getAllProducts = async (req, res) => {
     try {
+        const usuario = req.session.usuario;
+        const mensaje = req.query.mensaje;
+        const err = false;
         const datos = await getAllProductsFromDB();
-        res.render('./admin/admin', {data:datos});
+        res.render('./admin/admin', {
+            mensaje,
+            data:datos
+        });
     } catch (error) {
         console.error("Error getting all products: ", error);
         res.status(500).send('Internal Server Error');
@@ -30,7 +36,10 @@ export const saveNewProduct = async (req, res) => {
     try {
         const nuevoProd = await addNewProductToDB(newProduct);
         const datos = await getAllProductsFromDB();
-        res.render('./admin/admin', {data:datos});
+        res.render('./admin/admin', {
+            data:datos,
+            mensaje: "Nuevo item creado"
+        });
     } catch (error) {
         console.error("Error adding a new product: ", error);
         res.status(500).send('Internal Server Error');
@@ -64,7 +73,10 @@ export const updateProduct = async (req, res) => {
     try {
         const nuevoProd = await editProductInDB(prod_id,newProdData);
         const datos = await getAllProductsFromDB();
-        res.render('./admin/admin', {data:datos});
+        res.render('./admin/admin', {
+            data:datos,
+            mensaje: "Item actualizado con éxito"
+        });
     } catch (error) {
         console.error("Error saving changes to product: ", error);
         res.status(500).send('Internal Server Error');
@@ -85,7 +97,10 @@ export const deleteProduct = async (req, res) => {
                 console.log('Imagen borrada');
             }); 
             const datos = await getAllProductsFromDB();
-            res.render('./admin/admin', {data:datos});
+            res.render('./admin/admin', {
+                data:datos,
+                mensaje: "Item borrado exitosamente"
+            });
         } else {
             res.status(404).send('usuario not found');
         }

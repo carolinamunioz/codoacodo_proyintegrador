@@ -1123,6 +1123,18 @@ footer {
   color: var(--primary-solid);  
 }
 
+.admin__message {
+  font-family: var(--base-font);
+  font-size: var(--font-small);
+  color: var(--light-font-solid);
+  font-weight: 500;
+  background-color:rgb(178, 197, 233);
+  padding-left: var(--spacing-8);
+  padding-top: var(--spacing-12);
+  padding-bottom: var(--spacing-12);
+  margin: var(--spacing-8);
+}
+
 /*...... About us page ......*/
 
 .aboutus {

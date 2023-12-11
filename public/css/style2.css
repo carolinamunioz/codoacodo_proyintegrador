@@ -1875,7 +1875,7 @@ footer {
   }
   
   .item__promo{
-    font-size: var(--font-xsmall);
+    font-size: 8px;
     font-weight: 700;
     color: var(--secondary-solid);
   }
@@ -1969,5 +1969,24 @@ footer {
     font-size: var(--font-xsmall);
     font-weight: 700;
     color: var(--secondary-solid);
+  }
+
+  .shop-item__cover {
+    height: 550px;
+    width: 550px;
+  }
+
+  .shop-item__promo{
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--secondary-solid);
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-8);
+  }
+
+  .shop-container {
+    max-width: 1200px;
+    margin: 0 auto;
   }
   

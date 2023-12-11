@@ -12,6 +12,11 @@
     <%- include('../partials/headerAdmin') %>
     <main>
         <div class="container">
+            <% if (mensaje) { %>
+                <div class="admin__message" role="alert">
+                    <%= mensaje %>
+                </div>
+            <% } %>
             <div class="busqueda">
                 <iconify-icon icon="ic:baseline-search" class="busqueda__icon"></iconify-icon>
                 <p><input class="busqueda__input" type="search" name="busqueda" placeholder="Código, nombre o categoria"></p>
