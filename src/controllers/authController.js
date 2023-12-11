@@ -4,7 +4,7 @@ export const authControllers = {
     getLogin: (req, res) => res.render('./auth/login'),
     getRegister: (req, res) => res.render('./auth/register'),
     saveRegister: (req, res) => res.send('Route to save Register View'),
-    logout: (req, res) => res.send('Route for Logout View ')
+    logout: (req, res) => res.render('./auth/logout')
 }
 
 export const loginPOST = async (req, res) => {
