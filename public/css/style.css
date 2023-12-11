@@ -472,6 +472,13 @@ header{
   border-bottom: var(--primary-solid) 2px solid;
 }
 
+.login_errorMessage {
+  font-family: var(--alternative-font);
+  font-size: var(--font-small);
+  color: var(--primary-solid);
+  padding-bottom: var(--spacing-36);
+}
+
 /*........ Pagina: Carrito ..........*/
 
 
@@ -1145,6 +1152,8 @@ footer {
   font-weight: 400;
   padding-bottom: var(--spacing-12);
 }
+
+
 
   
 

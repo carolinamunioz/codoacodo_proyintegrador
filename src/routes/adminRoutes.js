@@ -10,7 +10,6 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, cb) => {
       cb(null, Date.now() + '-' + file.originalname);
-      // ej 345389423423-imagen.jpg
   }
 });
 
@@ -28,7 +27,7 @@ const requiereAdmin = (req, res, next) => {
 
 router.get('/', requiereAdmin, getAllProducts);
 router.get('/create',requiereAdmin, createItem);
-router.post('/create',requiereAdmin, upload.single('img_front'),saveNewProduct); 
+router.post('/create',requiereAdmin, upload.single('img_front'), saveNewProduct); 
 router.get('/edit/:id',requiereAdmin, getProductById);
 router.post('/edit/:id',requiereAdmin, upload.single('img_front'), updateProduct);
 router.get('/delete/:id',requiereAdmin, deleteProduct);
