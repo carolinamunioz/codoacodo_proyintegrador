@@ -882,6 +882,12 @@ footer {
   text-align: left;
 }
 
+.item__labelImagen {
+  font-family: var(--base-font);
+  font-size: var(--font-small);
+  text-align: left;
+}
+
 .item__input {
   border-style: none;
   border-bottom: 2px solid #FF3333;

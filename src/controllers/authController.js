@@ -21,8 +21,7 @@ export const loginPOST = async (req, res) => {
         console.log("REQ SESSION ---> ",req.session)
         res.redirect("/admin")
     } else {
-        res.render('./auth/login', {
-            mensaje: "Nombre de usuario o contraseña incorrecta",
+        res.render('./auth/login' + "Nombre de usuario o contraseña incorrecta", {
             error: true
         });
     }
