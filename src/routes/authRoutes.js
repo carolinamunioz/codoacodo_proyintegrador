@@ -9,7 +9,6 @@ router.get('/login', (req, res) => {
         error: false
     });
 });
-//router.get('/login', authControllers.getLogin);
 router.post('/login', loginPOST);
 router.get('/register', authControllers.getRegister);
 router.post('/register', authControllers.saveRegister);

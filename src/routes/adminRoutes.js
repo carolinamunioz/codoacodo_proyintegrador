@@ -24,6 +24,13 @@ const requiereAdmin = (req, res, next) => {
     next();
 };
 
+/*router.get('/', (req, res) => {
+  res.render('./admin/admin', {
+      usuario: req.session.usuario,
+      mensaje: req.query.mensaje || "",
+      error: false,
+  });
+});*/
 
 router.get('/', requiereAdmin, getAllProducts);
 router.get('/create',requiereAdmin, createItem);
