@@ -1099,7 +1099,7 @@ footer {
 }
 
 .listado__iconEdit {
-  font-size: var(--font-xsmall);
+  font-size: var(--font-medium);
   padding: 0.4rem var(--spacing-20);
   color: var(--secondary-solid);
 }
