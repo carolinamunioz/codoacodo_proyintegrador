@@ -68,3 +68,15 @@ export const deleteProdFromDB = async (prodId) => {
         throw error;
     }
 };
+
+//Obtener user y password de la BD
+export const getUserByUsernameFromDB = async (user) => {
+    try {
+        const [usuario] = await pool.query('SELECT * FROM user_login WHERE email = ?', user);
+        return usuario
+    }
+    catch (error) {
+        console.error('Error querying MySQL: ', error);
+        throw error;
+    }
+}
