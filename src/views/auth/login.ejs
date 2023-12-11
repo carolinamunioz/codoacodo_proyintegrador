@@ -39,6 +39,11 @@
                 </form>
             </div>
         </section>
+        <% if (mensaje) { %>
+            <div class="login_errorMessage form_container" role="alert">
+                <%= mensaje %>
+            </div>
+        <% } %>
     </body>
     <%- include('../partials/footerAdmin') %>
 </body>
