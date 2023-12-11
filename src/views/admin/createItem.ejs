@@ -13,7 +13,7 @@
     <body>
         <section class="item container">
             <h1 class="item__titulo">CREAR NUEVO ITEM</h1>
-            <form action="/admin/create/" method="post">
+            <form action="/admin/create/" method="post" enctype="multipart/form-data">
                 <div class="item__linea">
                     <label for="categoria" class="item__label">Categoria:</label>
                     <select name="category_id" id="categoria">
@@ -55,8 +55,16 @@
                 </div>
                 <div class="item__linea">
                     <label for="imagenes" class="item__label">Imagenes:</label>
-                    <button class="" type="submit">Elegir archivos</button>
-                    <p class="item__leyenda">No se ha seleccionado ningún archivo</p>
+                </div>
+                <div class="item__linea">
+                    <label for="imagenes" class="item__labelImagen">Imagen Frente:</label>
+                    <input type="file" name="img_front" id="img_front"
+                    accept="image/png,image/jpeg">   > 
+                </div>
+                <div class="item__linea">
+                    <label for="imagenes" class="item__labelImagen">Imagen Dorso:</label>
+                    <input type="file" name="img_back" id="img_back"
+                    accept="image/png,image/jpeg">   > 
                 </div>
                 <div class="item__botones">
                     <button class="item__boton" type="submit">Agregar Producto</button>
