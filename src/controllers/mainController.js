@@ -1,6 +1,6 @@
 export const mainControllers = {
-    home: (req, res) => res.send('Route for Home View'),
-    contact: (req, res) => res.render('./admin/contact'),
-    about: (req, res) => res.send('Route for About View'),
-    faqs: (req, res) => res.send('Route for FAQs View')
+    home: (req, res) => res.render('./main/index'),
+    contact: (req, res) => res.render('./main/contact'),
+    about: (req, res) => res.render('./main/about'),
+    faqs: (req, res) => res.render('./main/faqs')
 }

@@ -1110,17 +1110,35 @@ footer {
   color: var(--primary-solid);  
 }
 
-/*.......Pagina: Shop ..........*/
+/*...... About us page ......*/
 
-/*Filtrado*/
-.shop_Form-1 {
-  width: 100%;
-  height: 100%;
-  position:relative;
-  top: 40px;
-  left: 10px;
-  padding: 0.4rem;
-  }
+.aboutus {
+  font-family: var(--alternative-font);
+  font-size: large;
+  font-weight: 400;
+  padding-bottom: var(--spacing-36);
+}
+
+/*...... Faqs page ......*/
+
+.faqs__item {
+  padding-top: var(--spacing-16);
+  padding-bottom: var(--spacing-16);
+}
+
+.faqs__question {
+  font-family: var(--alternative-font);
+  font-size: large;
+  font-weight: 700;
+  padding-bottom: var(--spacing-12);
+}
+
+.faqs__answer {
+  font-family: var(--alternative-font);
+  font-size: large;
+  font-weight: 400;
+  padding-bottom: var(--spacing-12);
+}
 
   
 
